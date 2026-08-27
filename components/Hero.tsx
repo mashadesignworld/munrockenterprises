@@ -8,9 +8,9 @@ const featuredCars = [
   {
     id: 1,
     title: "2016 Ford Raptor",
-    specs: "Full Options | Sunroof | Leather | Low Mileage | Grade 4.5",
-    price: "US$ 35,550",
-    image: "/ford-raptor.jpg",
+    specs: "2000cc | Auto | 4wd | Diesel ",
+    price: "US$ 31,400",
+    image: "/ford-raptor2.jpg",
   },
   {
     id: 2,
@@ -22,9 +22,9 @@ const featuredCars = [
   {
     id: 3,
     title: "2017 TOYOTA HILUX REVO",
-    specs: "Hybrid | Panoramic Roof | JBL Sound | Grade 4.5",
-    price: "US$ 28,300",
-    image: "/toyota-hilux-revo2.jpg",
+    specs: "2400cc | Manual | 2wd | Diesel",
+    price: "US$ 13,700",
+    image: "/toyota-hilux-revo3.jpg",
   },
 ];
 
@@ -60,8 +60,7 @@ export default function CompactHero() {
   }, [paginate]);
 
   return (
-    <section className="relative bg-[#0A2540] py-8 sm:py-12 px-4 sm:px-6 overflow-hidden">
-      <div className="max-w-[1380px] mx-auto grid lg:grid-cols-12 gap-6 items-center">
+<section className="relative bg-[#0A2540] bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat overflow-hidden py-24">      <div className="max-w-[1380px] mx-auto grid lg:grid-cols-12 gap-6 items-center">
         
         {/* LEFT: Compact Search Card */}
         <div className="lg:col-span-4 xl:col-span-4">
