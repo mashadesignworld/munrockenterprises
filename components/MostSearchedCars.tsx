@@ -1,8 +1,10 @@
 "use client";
+
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Fuel, SlidersHorizontal, Sparkles, Heart, ArrowRight } from "lucide-react";
+import CarDetailsModal, { CarDetails } from "./CarDetailsModal";
 
 type BodyType = "suv" | "sedan" | "muv" | "luxury" | "offroad";
 
@@ -198,6 +200,8 @@ const CAR_DATA: Record<BodyType, Vehicle[]> = {
 
 export default function MostSearchedCars() {
   const [activeTab, setActiveTab] = useState<BodyType>("suv");
+  const [selectedCar, setSelectedCar] = useState<CarDetails | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const tabs: { key: BodyType; label: string }[] = [
     { key: "suv", label: "SUV" },
@@ -206,6 +210,49 @@ export default function MostSearchedCars() {
     { key: "luxury", label: "Luxury" },
     { key: "offroad", label: "Offroad / 4x4" },
   ];
+
+  // Helper function to map Vehicle interface to CarDetails interface
+  const mapVehicleToCarDetails = (vehicle: Vehicle): CarDetails => {
+    return {
+      id: vehicle.id,
+      title: vehicle.name,
+      subtitle: `${vehicle.year} ${vehicle.name} • ${vehicle.grade}`,
+      price: vehicle.priceKES,
+      badge: vehicle.grade,
+      year: vehicle.year,
+      mileage: "45,000 km (Verified)",
+      fuelType: vehicle.engine.toLowerCase().includes("diesel")
+        ? "Diesel"
+        : vehicle.engine.toLowerCase().includes("hybrid")
+        ? "Hybrid"
+        : "Petrol",
+      transmission: vehicle.transmission,
+      engineSize: vehicle.engine,
+      drivetrain: vehicle.transmission.includes("4WD") || vehicle.engine.includes("AWD") ? "4WD / AWD" : "2WD",
+      portClearance: "Mombasa Port Ready",
+      images: [
+        { label: "Front", src: vehicle.image },
+        { label: "Side", src: vehicle.image },
+        { label: "Interior", src: vehicle.image },
+        { label: "Back", src: vehicle.image },
+        { label: "Engine", src: vehicle.image },
+      ],
+      features: [
+        "Japanese Auction Grade Inspection",
+        "Original Alloy Wheels",
+        "Reverse Camera & Sensors",
+        "Keyless Push Start",
+        "Steering Audio Controls",
+        "Climate Control Air Conditioning",
+      ],
+      description: `Premium ${vehicle.year} ${vehicle.name} available for direct importation. Vehicle undergoes comprehensive pre-shipment inspection with full verification guarantees.`,
+    };
+  };
+
+  const handleOpenModal = (vehicle: Vehicle) => {
+    setSelectedCar(mapVehicleToCarDetails(vehicle));
+    setIsModalOpen(true);
+  };
 
   return (
     <section className="py-12 px-4 sm:px-6 bg-[#E8EEF5]">
@@ -333,7 +380,10 @@ export default function MostSearchedCars() {
                     </div>
                   </div>
 
-                  <button className="bg-[#0A2540] hover:bg-[#F26522] text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-all shadow-md">
+                  <button
+                    onClick={() => handleOpenModal(car)}
+                    className="bg-[#0A2540] hover:bg-[#F26522] text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-all shadow-md active:scale-95"
+                  >
                     View Details
                   </button>
                 </div>
@@ -342,6 +392,13 @@ export default function MostSearchedCars() {
           </motion.div>
         </AnimatePresence>
       </div>
+
+      {/* Connected Car Details Modal */}
+      <CarDetailsModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        car={selectedCar}
+      />
     </section>
   );
 }
