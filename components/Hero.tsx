@@ -7,10 +7,10 @@ import { Search, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 const featuredCars = [
   {
     id: 1,
-    title: "2016 TOYOTA LAND CRUISER PRADO",
+    title: "2016 Ford Raptor",
     specs: "Full Options | Sunroof | Leather | Low Mileage | Grade 4.5",
     price: "US$ 35,550",
-    image: "/toyotaprado.jpg",
+    image: "/ford-raptor.jpg",
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const featuredCars = [
     title: "2017 TOYOTA HILUX REVO",
     specs: "Hybrid | Panoramic Roof | JBL Sound | Grade 4.5",
     price: "US$ 28,300",
-    image: "/toyota-hilux-revo.jpg",
+    image: "/toyota-hilux-revo2.jpg",
   },
 ];
 
@@ -218,4 +218,4 @@ export default function CompactHero() {
       </div>
     </section>
   );
-}
+}  
