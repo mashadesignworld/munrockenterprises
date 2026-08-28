@@ -10,7 +10,7 @@ const featuredCars = [
     title: "2016 Ford Raptor",
     specs: "2000cc | Auto | 4wd | Diesel ",
     price: "US$ 31,400",
-    image: "/ford-raptor2.jpg",
+    image: "/ford-f150-side.jpg",
   },
   {
     id: 2,
