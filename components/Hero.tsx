@@ -7,10 +7,10 @@ import { Search, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 const featuredCars = [
   {
     id: 1,
-    title: "2016 Ford Raptor",
-    specs: "2000cc | Auto | 4wd | Diesel ",
-    price: "US$ 31,400",
-    image: "/ford-f150-side.jpg",
+    title: "2019 Toyota Hiace Commuter Van",
+    specs: "3000cc | Auto | 2wd | Diesel ",
+    price: "US$ 26,900",
+    image: "/toyota-hiace-grey.jpg",
   },
   {
     id: 2,
@@ -21,10 +21,10 @@ const featuredCars = [
   },
   {
     id: 3,
-    title: "2017 TOYOTA HILUX REVO",
-    specs: "2400cc | Manual | 2wd | Diesel",
-    price: "US$ 13,700",
-    image: "/toyota-hilux-revo3.jpg",
+    title: "2019 Toyota Hiace",
+    specs: "3000cc | Auto | 2wd | Diesel",
+    price: "US$ 26,900",
+    image: "/Toyota-Hiace.jpg",
   },
 ];
 
