@@ -7,17 +7,17 @@ import { Search, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 const featuredCars = [
   {
     id: 1,
-    title: "2019 Toyota Hiace Commuter Van",
-    specs: "3000cc | Auto | 2wd | Diesel ",
+    title: "2019 Ford Ranger Raptor 2019",
+    specs: "2000cc | Auto | 4wd | Diesel ",
     price: "US$ 26,900",
-    image: "/toyota-hiace-grey.jpg",
+    image: "/ford-ranger-raptor-2019.jpg",
   },
   {
     id: 2,
-    title: "2018 GMC YUKON",
-    specs: "Full Options | Sunroof | Leather | Low Mileage | Grade 4.5",
-    price: "US$ 35,550",
-    image: "/GMC.jpg",
+    title: "2019 Toyota Fortuner ",
+    specs: "2400cc | Auto | 4wd | Diesel",
+    price: "US$ 38,633",
+    image: "/toyota-fortuner.jpg",
   },
   {
     id: 3,
