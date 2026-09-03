@@ -21,10 +21,10 @@ const featuredCars = [
   },
   {
     id: 3,
-    title: "2019 Toyota Hiace",
-    specs: "3000cc | Auto | 2wd | Diesel",
+    title: "2020 Toyota Hilux Revo",
+    specs: "2800cc | Manual | 4wd | Diesel",
     price: "US$ 26,900",
-    image: "/Toyota-Hiace.jpg",
+    image: "/2020-Toyota-Hilux-Revo.jpg",
   },
 ];
 
